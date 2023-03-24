@@ -50,6 +50,7 @@ import { StudentsComponent } from './students/students.component';
 import { TeachersComponent } from './teachers/teachers.component';
 import { LessonsComponent } from './lessons/lessons.component';
 import { ClubCardsComponent } from './club-cards/club-cards.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -99,7 +100,8 @@ import { ClubCardsComponent } from './club-cards/club-cards.component';
     MatTooltipModule,
     MatPaginatorModule,
     MatSortModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule
   ],
   schemas:[
     CUSTOM_ELEMENTS_SCHEMA
