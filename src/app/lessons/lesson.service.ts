@@ -23,4 +23,8 @@ export class LessonService {
   getLesson(id: string): Observable<Lesson> {
     return this.httpClient.get<Lesson>(this.baseApiUrl + '/Lesson/' + id, this.httpOptions);
   }
+
+  deleteLesson(lessonId: string): Observable<Lesson> {
+    return this.httpClient.delete<Lesson>(this.baseApiUrl + '/Lesson/' + lessonId, this.httpOptions);
+  }
 }
