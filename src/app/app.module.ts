@@ -46,11 +46,20 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { SideNavComponent } from './layout/side-nav/side-nav.component';
+import { TeachersComponent } from './teachers/teachers.component';
+import { LessonsComponent } from './lessons/lessons.component';
+import { ClubCardsComponent } from './club-cards/club-cards.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ApprenticesComponent } from './apprentices/apprentices.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideNavComponent
+    SideNavComponent,
+    TeachersComponent,
+    LessonsComponent,
+    ClubCardsComponent,
+    ApprenticesComponent
   ],
   imports: [
     BrowserModule,
@@ -91,7 +100,8 @@ import { SideNavComponent } from './layout/side-nav/side-nav.component';
     MatTooltipModule,
     MatPaginatorModule,
     MatSortModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule
   ],
   schemas:[
     CUSTOM_ELEMENTS_SCHEMA
