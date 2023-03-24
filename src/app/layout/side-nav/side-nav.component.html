@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <div class="container">
+    <button mat-fab (click)="drawer.toggle()">
+      <mat-icon>home</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+<mat-drawer-container class="example-container">
+  <mat-drawer #drawer mode="side" opened>
+    <mat-action-list>
+      <a href="lessons" mat-list-item><mat-icon>extension</mat-icon> Lessons</a>
+      <a href="teachers"  mat-list-item><mat-icon>assignment_ind</mat-icon> Teachers</a>
+      <a href="students"  mat-list-item><mat-icon>account_circle</mat-icon> Students</a>
+      <a href="club-cards"  mat-list-item><mat-icon>payment</mat-icon> ClubCards</a>
+    </mat-action-list>
+  </mat-drawer>
+  <mat-drawer-content>
+
+  </mat-drawer-content>
+</mat-drawer-container>
