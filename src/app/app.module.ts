@@ -45,10 +45,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { SideNavComponent } from './layout/side-nav/side-nav.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,
