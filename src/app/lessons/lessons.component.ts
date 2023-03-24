@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Lesson } from '../models/ui-models/lesson.model';
 import { LessonService } from './lesson.service';
 import { MatPaginator } from '@angular/material/paginator';
@@ -11,8 +11,8 @@ import { MatSort } from '@angular/material/sort';
   styleUrls: ['./lessons.component.css']
 })
 export class LessonsComponent implements OnInit {
-  lessons: Lesson[] = []
-  displayedColumns: string[] = ['id', 'danceGroup', 'name', 'teacherId', 'timeEst', 'description', 'everySpecificDayOfWeek', 'createdBy', 'createdOn', 'modifiedBy', 'modifiedOn'];
+  lessons: Lesson[] = [];
+  displayedColumns: string[] = ['id', 'danceGroup', 'name', 'teacherId', 'timeEst','description', 'everySpecificDayOfWeek', 'createdBy','createdOn', 'modifiedBy', 'modifiedOn','edit'];
   dataSource = new MatTableDataSource<Lesson>(this.lessons);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

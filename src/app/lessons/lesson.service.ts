@@ -19,4 +19,8 @@ export class LessonService {
   postBrowseLesson(): Observable<Lesson[]> {
     return this.httpClient.post<Lesson[]>(this.baseApiUrl + '/Lesson/Browse', '{}', this.httpOptions);
   }
+
+  getLesson(id: string): Observable<Lesson> {
+    return this.httpClient.get<Lesson>(this.baseApiUrl + '/Lesson/' + id, this.httpOptions);
+  }
 }
