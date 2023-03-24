@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Lesson } from '../models/ui-models/lesson.model';
 import { LessonService } from './lesson.service';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 
 @Component({
@@ -10,7 +10,7 @@ import { MatSort } from '@angular/material/sort';
   templateUrl: './lessons.component.html',
   styleUrls: ['./lessons.component.css']
 })
-export class LessonsComponent implements OnInit, AfterViewInit {
+export class LessonsComponent implements OnInit {
   lessons: Lesson[] = []
   displayedColumns: string[] = ['id', 'danceGroup', 'name', 'teacherId', 'timeEst', 'description', 'everySpecificDayOfWeek', 'createdBy', 'createdOn', 'modifiedBy', 'modifiedOn'];
   dataSource = new MatTableDataSource<Lesson>(this.lessons);
@@ -20,29 +20,24 @@ export class LessonsComponent implements OnInit, AfterViewInit {
 
   constructor(private lessonsService: LessonService){}
 
-
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
-
   ngOnInit(): void {
     //Fetch Lessons
-    this.lessonsService.postLesson()
+    this.lessonsService.postBrowseLesson()
     .subscribe(
-      (successResponse) => {
-        this.lessons = successResponse;
-        this.dataSource = new MatTableDataSource<Lesson>(this.lessons);
+        (successResponse) => {
+          this.lessons = successResponse;
+          this.dataSource = new MatTableDataSource<Lesson>(this.lessons);
 
-        if(this.paginator){
-          this.dataSource.paginator = this.paginator;
+          if(this.paginator){
+            this.dataSource.paginator = this.paginator;
+          }
+          if(this.matSort){
+            this.dataSource.sort = this.matSort;
+          }
+        },
+        (errorResponse) => {
+          console.log(errorResponse);
         }
-        if(this.matSort){
-          this.dataSource.sort = this.matSort;
-        }
-      },
-      (errorResponse) => {
-        console.log(errorResponse);
-      }
       )
   }
 }

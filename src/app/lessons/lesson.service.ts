@@ -8,7 +8,7 @@ import { Lesson } from '../models/api-models/lesson.model';
 })
 export class LessonService {
 
-  private baseApiUrl = 'http://localhost:5555/Lesson/Browse';
+  private baseApiUrl = 'http://localhost:5555';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -16,7 +16,7 @@ export class LessonService {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
   }
 
-  postLesson(): Observable<Lesson[]> {
-    return this.httpClient.post<Lesson[]>(this.baseApiUrl, '{}', this.httpOptions);
+  postBrowseLesson(): Observable<Lesson[]> {
+    return this.httpClient.post<Lesson[]>(this.baseApiUrl + '/Lesson/Browse', '{}', this.httpOptions);
   }
 }
