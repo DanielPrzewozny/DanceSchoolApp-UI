@@ -11,22 +11,22 @@ import { ApprenticeService } from './apprentice.service';
   styleUrls: ['./apprentices.component.css']
 })
 export class ApprenticesComponent implements OnInit {
-  teachers: Apprentice[] = []
+  apprentices: Apprentice[] = []
   displayedColumns: string[] = ['id', 'name', 'surname', 'city', 'country', 'clubCardId', 'role', 'danceGroup', 'createdBy', 'createdOn', 'modifiedBy', 'modifiedOn'];
-  dataSource = new MatTableDataSource<Apprentice>(this.teachers);
+  dataSource = new MatTableDataSource<Apprentice>(this.apprentices);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) matSort!: MatSort;
 
-  constructor(private teacherService: ApprenticeService){}
+  constructor(private apprenticeService: ApprenticeService){}
 
   ngOnInit(): void {
     //Fetch Lessons
-    this.teacherService.postBrowseApprentices()
+    this.apprenticeService.postBrowseApprentices()
     .subscribe(
         (successResponse) => {
-          this.teachers = successResponse;
-          this.dataSource = new MatTableDataSource<Apprentice>(this.teachers);
+          this.apprentices = successResponse;
+          this.dataSource = new MatTableDataSource<Apprentice>(this.apprentices);
 
           if(this.paginator){
             this.dataSource.paginator = this.paginator;
