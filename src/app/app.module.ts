@@ -1,5 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -51,6 +52,7 @@ import { LessonsComponent } from './lessons/lessons.component';
 import { ClubCardsComponent } from './club-cards/club-cards.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApprenticesComponent } from './apprentices/apprentices.component';
+import { ViewLessonsComponent } from './lessons/view-lessons/view-lessons.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,8 @@ import { ApprenticesComponent } from './apprentices/apprentices.component';
     TeachersComponent,
     LessonsComponent,
     ClubCardsComponent,
-    ApprenticesComponent
+    ApprenticesComponent,
+    ViewLessonsComponent
   ],
   imports: [
     BrowserModule,
@@ -101,7 +104,8 @@ import { ApprenticesComponent } from './apprentices/apprentices.component';
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   schemas:[
     CUSTOM_ELEMENTS_SCHEMA
