@@ -49,10 +49,10 @@ import { MatTableModule } from '@angular/material/table';
 import { SideNavComponent } from './layout/side-nav/side-nav.component';
 import { TeachersComponent } from './teachers/teachers.component';
 import { LessonsComponent } from './lessons/lessons.component';
-import { ClubCardsComponent } from './club-cards/club-cards.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApprenticesComponent } from './apprentices/apprentices.component';
 import { ViewLessonsComponent } from './lessons/view-lessons/view-lessons.component';
+import { ClubCardsComponent } from './club-cards/club-cards.component';
 
 @NgModule({
   declarations: [

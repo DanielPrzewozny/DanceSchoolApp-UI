@@ -1,12 +1,12 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Teacher } from '../models/ui-models/teacher.model';
+import { ClubCard } from 'src/app/models/api-models/club-card.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TeacherService {
+export class ClubCardService {
 
   private baseApiUrl = 'http://localhost:5555';
 
@@ -16,7 +16,7 @@ export class TeacherService {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
   }
 
-  postBrowseTeachers(): Observable<Teacher[]> {
-    return this.httpClient.post<Teacher[]>(this.baseApiUrl + '/Teacher/Browse', '{}', this.httpOptions);
+  postBrowseClubCards(): Observable<ClubCard[]> {
+    return this.httpClient.post<ClubCard[]>(this.baseApiUrl + '/ClubCard/Browse', '{}', this.httpOptions);
   }
 }
