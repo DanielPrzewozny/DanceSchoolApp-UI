@@ -22,8 +22,8 @@ export class LessonsComponent implements OnInit {
   @ViewChild(MatSort) matSort!: MatSort;
 
   constructor(private lessonsService: LessonService,
-    private snackbar: MatSnackBar,
-    private router: Router){}
+    private snackbar: MatSnackBar)
+    {}
 
   ngOnInit(): void {
     //Fetch Lessons
