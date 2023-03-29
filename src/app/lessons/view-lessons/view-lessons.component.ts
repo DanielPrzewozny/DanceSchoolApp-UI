@@ -27,7 +27,7 @@ export class ViewLessonsComponent implements OnInit {
     modifiedOn: ''
   };
 
-  isNewStudent: boolean = true;
+  isNewLesson: boolean = true;
   header='';
 
   constructor(private readonly lessonService: LessonService,
@@ -44,12 +44,12 @@ export class ViewLessonsComponent implements OnInit {
         {
             if(this.lessonId.toLowerCase() === 'Add'.toLowerCase())
             {
-              this.isNewStudent = true;
+              this.isNewLesson = true;
               this.header = 'Add New Lesson'
             }
             else
             {
-              this.isNewStudent = false;
+              this.isNewLesson = false;
               this.header = 'Edit Lesson'
               this.lessonService.getLesson(this.lessonId)
               .subscribe(

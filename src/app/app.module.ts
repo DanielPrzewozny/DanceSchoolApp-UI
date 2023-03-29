@@ -50,9 +50,10 @@ import { SideNavComponent } from './layout/side-nav/side-nav.component';
 import { TeachersComponent } from './teachers/teachers.component';
 import { LessonsComponent } from './lessons/lessons.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ApprenticesComponent } from './apprentices/apprentices.component';
 import { ViewLessonsComponent } from './lessons/view-lessons/view-lessons.component';
 import { ClubCardsComponent } from './club-cards/club-cards.component';
+import { ViewApprenticesComponent } from './apprentices/view-apprentices/view-apprentices/view-apprentices.component';
+import { ApprenticesComponent } from './apprentices/apprentices.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { ClubCardsComponent } from './club-cards/club-cards.component';
     LessonsComponent,
     ClubCardsComponent,
     ApprenticesComponent,
-    ViewLessonsComponent
+    ViewLessonsComponent,
+    ViewApprenticesComponent
   ],
   imports: [
     BrowserModule,
