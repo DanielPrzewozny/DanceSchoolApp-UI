@@ -4,6 +4,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { Apprentice } from '../models/api-models/Apprentice/apprentice.model';
 import { ApprenticeService } from '../services/apprentices/apprentice.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-apprentices',
@@ -14,13 +16,15 @@ export class ApprenticesComponent implements OnInit {
   apprentices: Apprentice[] = []
   displayedColumns: string[] = ['id', 'name', 'surname', 'city', 'country',
   'clubCardId', 'role', 'danceGroup', 'createdBy', 'createdOn', 'modifiedBy', 'modifiedOn',
-  'edit'];
+  'edit', 'delete'];
   dataSource = new MatTableDataSource<Apprentice>(this.apprentices);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) matSort!: MatSort;
 
-  constructor(private apprenticeService: ApprenticeService){}
+  constructor(private apprenticeService: ApprenticeService,
+    private snackbar: MatSnackBar)
+    {}
 
   ngOnInit(): void {
     //Fetch Lessons
@@ -42,4 +46,18 @@ export class ApprenticesComponent implements OnInit {
         }
       )
   }
+
+  onDelete(apprenticeId: string):void {
+    this.apprenticeService.deleteApprentice(apprenticeId)
+      .subscribe(
+        (successResponse) => {
+          console.log(successResponse);
+          setTimeout(() => {window.location.reload();}, 2000);
+          this.snackbar.open('Lesson successfully deleted', undefined, {duration: 2000});
+        },
+        (errorResponse) => {
+          console.log(errorResponse);
+        }
+      )
+    }
 }

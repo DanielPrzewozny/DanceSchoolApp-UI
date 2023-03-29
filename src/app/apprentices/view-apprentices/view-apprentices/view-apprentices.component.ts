@@ -66,6 +66,19 @@ apprentice: Apprentice = {
     )
   }
 
+  onUpdate():void {
+    this.apprenticeService.updateApprentice(this.apprentice)
+      .subscribe(
+        (successResponse) => {
+          console.log(successResponse);
+          this.snackbar.open('Apprentice updated successfully', undefined, {duration: 2000});
+        },
+        (errorResponse) => {
+          console.log(errorResponse);
+        }
+      )
+    }
+
     onCreate():void {
       this.apprenticeService.createApprentice(this.apprentice)
         .subscribe(
