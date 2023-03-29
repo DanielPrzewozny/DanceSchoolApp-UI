@@ -2,8 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
-import { Apprentice } from '../models/api-models/apprentice.model';
-import { ApprenticeService } from './apprentice.service';
+import { Apprentice } from '../models/api-models/Apprentice/apprentice.model';
+import { ApprenticeService } from '../services/apprentices/apprentice.service';
 
 @Component({
   selector: 'app-apprentices',
@@ -12,7 +12,9 @@ import { ApprenticeService } from './apprentice.service';
 })
 export class ApprenticesComponent implements OnInit {
   apprentices: Apprentice[] = []
-  displayedColumns: string[] = ['id', 'name', 'surname', 'city', 'country', 'clubCardId', 'role', 'danceGroup', 'createdBy', 'createdOn', 'modifiedBy', 'modifiedOn'];
+  displayedColumns: string[] = ['id', 'name', 'surname', 'city', 'country',
+  'clubCardId', 'role', 'danceGroup', 'createdBy', 'createdOn', 'modifiedBy', 'modifiedOn',
+  'edit'];
   dataSource = new MatTableDataSource<Apprentice>(this.apprentices);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

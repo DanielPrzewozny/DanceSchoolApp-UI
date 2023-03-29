@@ -14,3 +14,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   padding: 1em;
 }
 
+.top-row{
+  padding: 1em 0 ;
+  margin-bottom: 2em ;
+}
+
+.main-form{
+  margin-left: 1em ;
+  margin-right: 1em ;
+}
+
+.mat-mdc-form-field{
+  width: 100%;
+}
