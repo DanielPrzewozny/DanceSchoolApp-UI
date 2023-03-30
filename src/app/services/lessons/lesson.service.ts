@@ -1,9 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AddLessonRequest } from 'src/app/models/api-models/add-lesson-request';
-import { Lesson } from 'src/app/models/api-models/lesson.model';
-import { UpdateLessonRequest } from 'src/app/models/api-models/update-lesson-request';
+import { AddLessonRequest } from 'src/app/models/api-models/Lesson/add-lesson-request';
+import { Lesson } from 'src/app/models/api-models/Lesson/lesson.model';
+import { UpdateLessonRequest } from 'src/app/models/api-models/Lesson/update-lesson-request';
 
 @Injectable({
   providedIn: 'root'

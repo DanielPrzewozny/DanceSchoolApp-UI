@@ -44,7 +44,7 @@ apprentice: Apprentice = {
             if(this.apprenticeId.toLowerCase() === 'Add'.toLowerCase())
             {
               this.isNewApprentice = true;
-              this.header = 'Add New Lesson'
+              this.header = 'Add New Apprentice'
             }
             else
             {
@@ -72,6 +72,9 @@ apprentice: Apprentice = {
         (successResponse) => {
           console.log(successResponse);
           this.snackbar.open('Apprentice updated successfully', undefined, {duration: 2000});
+          setTimeout(() => {
+            this.router.navigateByUrl(`apprentices`);
+          }, 2000);
         },
         (errorResponse) => {
           console.log(errorResponse);
@@ -84,6 +87,10 @@ apprentice: Apprentice = {
         .subscribe(
           (successResponse) => {
             console.log(successResponse);
+            this.snackbar.open('Apprentice created successfully', undefined, {duration: 2000});
+            setTimeout(() => {
+                this.router.navigateByUrl(`apprentices/${successResponse}`);
+            }, 2000);
           },
           (errorResponse) => {
             console.log(errorResponse);

@@ -54,6 +54,7 @@ import { ViewLessonsComponent } from './lessons/view-lessons/view-lessons.compon
 import { ClubCardsComponent } from './club-cards/club-cards.component';
 import { ViewApprenticesComponent } from './apprentices/view-apprentices/view-apprentices/view-apprentices.component';
 import { ApprenticesComponent } from './apprentices/apprentices.component';
+import { ViewClubCardsComponent } from './club-cards/view-club-cards/view-club-cards/view-club-cards.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { ApprenticesComponent } from './apprentices/apprentices.component';
     ClubCardsComponent,
     ApprenticesComponent,
     ViewLessonsComponent,
-    ViewApprenticesComponent
+    ViewApprenticesComponent,
+    ViewClubCardsComponent
   ],
   imports: [
     BrowserModule,

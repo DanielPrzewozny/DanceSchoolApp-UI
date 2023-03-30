@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row top-row">
+    <div class="col-xs-12">
+      <a routerLink="/club-cards" mat-raised-button color="primary">
+        <mat-icon>chevron_left</mat-icon> Go back
+      </a>
+    </div>
+  </div>
+
+
+<div class="row">
+  <div class="col-xs-8">
+    <form>
+      <div class="row">
+        <div class="col-xs-6">
+          <mat-form-field appearance="outline">
+            <mat-label>User Id</mat-label>
+            <input type="number" matInput [(ngModel)]="clubCard.userId" name="userId">
+          </mat-form-field>
+        </div>
+        <div class="col-xs-6">
+          <mat-form-field appearance="outline">
+            <mat-label>Dance Group</mat-label>
+            <input type="text" matInput [(ngModel)]="clubCard.danceGroup" name="danceGroup">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <mat-form-field appearance="outline">
+            <mat-label>Valid From Date</mat-label>
+            <input matInput [matDatepicker]="pickerValidFromDate" [(ngModel)]="clubCard.validFromDate" name="validFromDate">
+            <mat-datepicker-toggle matSuffix [for]="pickerValidFromDate"></mat-datepicker-toggle>
+            <mat-datepicker #pickerValidFromDate></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-xs-6">
+          <mat-form-field appearance="outline">
+            <mat-label>Expiration Date</mat-label>
+            <input matInput [matDatepicker]="pickerExpirationDate" [(ngModel)]="clubCard.expirationDate" name="expirationDate">
+            <mat-datepicker-toggle matSuffix [for]="pickerExpirationDate"></mat-datepicker-toggle>
+            <mat-datepicker #pickerExpirationDate></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button mat-raised-button color="primary" (click)="onUpdate()" *ngIf="!isNewClubCard">Save</button>
+          <button mat-raised-button color="primary" (click)="onCreate()" *ngIf="isNewClubCard">Create</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  </div>
+</div>
