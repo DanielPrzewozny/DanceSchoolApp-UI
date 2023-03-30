@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
-import { Lesson } from 'src/app/models/ui-models/lesson.model';
+import { Lesson } from 'src/app/models/ui-models/Lesson/lesson.model';
 import { LessonService } from 'src/app/services/lessons/lesson.service';
-import { UpdateLessonRequest } from 'src/app/models/api-models/update-lesson-request';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -73,6 +71,9 @@ export class ViewLessonsComponent implements OnInit {
         (successResponse) => {
           console.log(successResponse);
           this.snackbar.open('Lesson updated successfully', undefined, {duration: 2000});
+          setTimeout(() => {
+            this.router.navigateByUrl(`lessons`);
+          }, 2000);
         },
         (errorResponse) => {
           console.log(errorResponse);

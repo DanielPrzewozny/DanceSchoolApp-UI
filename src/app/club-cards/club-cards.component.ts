@@ -2,8 +2,9 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
-import { ClubCard } from '../models/ui-models/club-card.model';
-import { ClubCardService } from './club-card.service';
+import { ClubCard } from '../models/ui-models/ClubCards/club-card.model';
+import { ClubCardService } from '../services/club-cards/club-card.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-club-cards',
@@ -12,13 +13,16 @@ import { ClubCardService } from './club-card.service';
 })
 export class ClubCardsComponent {
   clubCards: ClubCard[] = [];
-  displayedColumns: string[] = ['id', 'userId', 'danceGroup', 'validFromDate', 'expirationDate', 'createdBy', 'createdOn', 'modifiedBy', 'modifiedOn'];
+  displayedColumns: string[] = ['id', 'userId', 'danceGroup', 'validFromDate', 'expirationDate',
+  'createdBy', 'createdOn', 'modifiedBy', 'modifiedOn',
+  'edit', 'delete'];
   dataSource = new MatTableDataSource<ClubCard>(this.clubCards);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) matSort!: MatSort;
 
-  constructor(private clubCardService: ClubCardService){}
+  constructor(private clubCardService: ClubCardService,
+    private snackbar: MatSnackBar){}
 
   ngOnInit(): void {
     //Fetch ClubCards
@@ -40,4 +44,18 @@ export class ClubCardsComponent {
         }
       )
   }
+
+  onDelete(clubCardId: string):void {
+    this.clubCardService.deleteClubCard(clubCardId)
+      .subscribe(
+        (successResponse) => {
+          console.log(successResponse);
+          setTimeout(() => {window.location.reload();}, 2000);
+          this.snackbar.open('ClubCard successfully deleted', undefined, {duration: 2000});
+        },
+        (errorResponse) => {
+          console.log(errorResponse);
+        }
+      )
+    }
 }
