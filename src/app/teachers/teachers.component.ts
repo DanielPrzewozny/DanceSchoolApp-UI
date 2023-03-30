@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { Teacher } from '../models/ui-models/Teacher/teacher.model';
 import { TeacherService } from '../services/teacher/teacher.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -13,13 +14,16 @@ import { TeacherService } from '../services/teacher/teacher.service';
 })
 export class TeachersComponent implements OnInit {
   teachers: Teacher[] = []
-  displayedColumns: string[] = ['id', 'name', 'surname', 'city', 'country', 'clubCardId', 'role', 'danceGroup', 'createdBy', 'createdOn', 'modifiedBy', 'modifiedOn'];
+  displayedColumns: string[] = ['id', 'name', 'surname', 'city', 'country', 'clubCardId', 'role', 'danceGroup',
+  'createdBy', 'createdOn', 'modifiedBy', 'modifiedOn',
+  'edit', 'delete'];
   dataSource = new MatTableDataSource<Teacher>(this.teachers);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) matSort!: MatSort;
 
-  constructor(private teacherService: TeacherService){}
+  constructor(private teacherService: TeacherService,
+    private snackbar: MatSnackBar){}
 
   ngOnInit(): void {
     //Fetch Lessons
@@ -41,4 +45,18 @@ export class TeachersComponent implements OnInit {
         }
       )
   }
+
+  onDelete(teacherId: string):void {
+    this.teacherService.deleteTeacher(teacherId)
+      .subscribe(
+        (successResponse) => {
+          console.log(successResponse);
+          setTimeout(() => {window.location.reload();}, 2000);
+          this.snackbar.open('Teacher successfully deleted', undefined, {duration: 2000});
+        },
+        (errorResponse) => {
+          console.log(errorResponse);
+        }
+      )
+    }
 }

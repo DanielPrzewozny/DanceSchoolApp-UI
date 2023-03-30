@@ -53,7 +53,7 @@ export class ApprenticesComponent implements OnInit {
         (successResponse) => {
           console.log(successResponse);
           setTimeout(() => {window.location.reload();}, 2000);
-          this.snackbar.open('Lesson successfully deleted', undefined, {duration: 2000});
+          this.snackbar.open('Apprentice successfully deleted', undefined, {duration: 2000});
         },
         (errorResponse) => {
           console.log(errorResponse);

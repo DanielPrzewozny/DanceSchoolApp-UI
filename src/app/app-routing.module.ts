@@ -7,6 +7,7 @@ import { ViewClubCardsComponent } from './club-cards/view-club-cards/view-club-c
 import { LessonsComponent } from './lessons/lessons.component';
 import { ViewLessonsComponent } from './lessons/view-lessons/view-lessons.component';
 import { TeachersComponent } from './teachers/teachers.component';
+import { ViewTeachersComponent } from './teachers/view-teachers/view-teachers/view-teachers.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'teachers',
     component: TeachersComponent
+  },
+  {
+    path: 'teachers/:id',
+    component: ViewTeachersComponent
   },
   {
     path: 'lessons',
