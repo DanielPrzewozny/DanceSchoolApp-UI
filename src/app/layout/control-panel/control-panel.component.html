@@ -1,9 +1,9 @@
 <mat-toolbar color="primary">
-  <div class="container">
+
     <button mat-fab (click)="drawer.toggle()">
       <mat-icon>home</mat-icon>
     </button>
-  </div>
+
 </mat-toolbar>
 <mat-drawer-container class="example-container">
   <mat-drawer #drawer mode="side" opened>
@@ -15,6 +15,7 @@
     </mat-action-list>
   </mat-drawer>
   <mat-drawer-content>
-    <router-outlet></router-outlet>
+<router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>
+

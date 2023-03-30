@@ -46,7 +46,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
-import { SideNavComponent } from './layout/side-nav/side-nav.component';
 import { TeachersComponent } from './teachers/teachers.component';
 import { LessonsComponent } from './lessons/lessons.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -56,11 +55,12 @@ import { ViewApprenticesComponent } from './apprentices/view-apprentices/view-ap
 import { ApprenticesComponent } from './apprentices/apprentices.component';
 import { ViewClubCardsComponent } from './club-cards/view-club-cards/view-club-cards/view-club-cards.component';
 import { ViewTeachersComponent } from './teachers/view-teachers/view-teachers/view-teachers.component';
+import { MainInfoComponent } from './layout/main-info/main-info.component';
+import { ControlPanelComponent } from './layout/control-panel/control-panel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideNavComponent,
     TeachersComponent,
     LessonsComponent,
     ClubCardsComponent,
@@ -68,7 +68,9 @@ import { ViewTeachersComponent } from './teachers/view-teachers/view-teachers/vi
     ViewLessonsComponent,
     ViewApprenticesComponent,
     ViewClubCardsComponent,
-    ViewTeachersComponent
+    ViewTeachersComponent,
+    MainInfoComponent,
+    ControlPanelComponent
   ],
   imports: [
     BrowserModule,
@@ -111,7 +113,7 @@ import { ViewTeachersComponent } from './teachers/view-teachers/view-teachers/vi
     MatSortModule,
     MatTableModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   schemas:[
     CUSTOM_ELEMENTS_SCHEMA
