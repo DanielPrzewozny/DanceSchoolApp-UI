@@ -2,34 +2,41 @@
 
 html, body { height: 100%; }
 
-.example-container {
-  width: 100%;
-  height: 100%;
-  border: 1px solid #555;
+
+mat-card-title,
+      mat-card-content {
+        display: flex;
+        justify-content: center;
+      }
+
+
+table{
+        height: 100px;
 }
 
-.mt-1{
-  margin-top: 1em;
-  margin-left: 1em;
-  margin-right: 1em;
+td{
+        height: 40px;
+        width: 150px;
+        border: gray thin solid;
 }
 
-.container{
-  width: 97%;
-  padding: 1em;
+.resize{
+        top: 0px;
+        width: 150px;
+        height: 40px;
+        float: left;
+        border: #002DA4 thin solid;
+
+        text-align: center;
+        border-right-color: red;
+        position: absolute;
+        overflow: hidden;
+        z-index: 1;
 }
 
-.top-row{
-  padding: 1em 0 ;
-  margin-bottom: 2em ;
-  margin-left: 1em ;
-}
-
-.main-form{
-  margin-left: 1em ;
-  margin-right: 1em ;
-}
-
-.mat-mdc-form-field{
-  width: 100%;
+td.drop
+{
+        position: relative;
+        width: 150px;
+        clear:both;
 }

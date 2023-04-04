@@ -1,10 +1,10 @@
-<mat-toolbar color="primary">
 
+<mat-toolbar color="primary">
     <button mat-fab (click)="drawer.toggle()">
       <mat-icon>home</mat-icon>
     </button>
-
 </mat-toolbar>
+
 <mat-drawer-container class="example-container">
   <mat-drawer #drawer mode="side" opened>
     <mat-action-list>
@@ -15,6 +15,164 @@
     </mat-action-list>
   </mat-drawer>
   <mat-drawer-content>
+    <!-- <mat-card-content class="mat-elevation-z8" style="display: flex;
+    justify-content: center;
+    align-items: center; margin-top: 3em; margin-bottom: 3em;"><img src='./assets/img/lessons/grafik.jpg' alt="Ballroom dance"></mat-card-content> -->
+
+    <div class="content">
+      <table class="mat-elevation-z8" cellspacing='3'>
+        <tr>
+          <th></th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+          <th>Saturday</th>
+          <th>Sunday</th>
+        </tr>
+
+        <tbody class='container'>
+          <tr>
+            <th scope="row">09:00 – 10:00</th>
+            <td class='drop'>
+              <div draggable='true' class='resize' style='background-color:blue'>Session A</div>
+            </td>
+            <td draggable='true' class='drop'>
+              <div draggable='true' class='resize' style='background-color:red'>Session B</div>
+            </td>
+            <td draggable='true' class='drop'><div draggable='true' class='resize'>Session C</div></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+          </tr>
+
+          <tr>
+            <th scope="row">10:00 – 11:00</th>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+          </tr>
+          <tr>
+            <th scope="row">11:00 – 12:00</th>
+            <td class='drop'></td>
+            <td class='drop'></td>
+            <td class='drop'></td>
+            <td class='drop'></td>
+            <td class='drop'></td>
+            <td class='drop'></td>
+            <td class='drop'><div draggable='true' class='resize'>Session D</div></td>
+          </tr>
+          <tr>
+            <th scope="row">12:00 – 13:00</th>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+          </tr>
+          <tr>
+            <th scope="row">13:00 – 14:00</th>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+          </tr>
+          <tr>
+            <th scope="row">14:00 – 15:00</th>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+          </tr>
+          <tr>
+            <th scope="row">15:00 – 16:00</th>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+          </tr>
+          <tr>
+            <th scope="row">16:00 – 17:00</th>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+          </tr>
+          <tr>
+            <th scope="row">17:00 – 18:00</th>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+          </tr>
+          <tr>
+            <th scope="row">18:00 – 19:00</th>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+          </tr>
+          <tr>
+            <th scope="row">19:00 – 20:00</th>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+          </tr>
+          <tr>
+            <th scope="row">20:00 – 21:00</th>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'><div draggable='true' class='resize' style='background-color:yellow'>Session F</div></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'><div draggable='true' class='resize' style='background-color:yellow'>Session G</div></td>
+            <td draggable='true' class='drop'></td>
+          </tr>
+          <tr>
+            <th scope="row">21:00 – 22:00</th>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+            <td draggable='true' class='drop'></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
 <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>

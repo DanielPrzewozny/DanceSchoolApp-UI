@@ -58,6 +58,7 @@ import { ViewTeachersComponent } from './teachers/view-teachers/view-teachers/vi
 import { MainInfoComponent } from './layout/main-info/main-info.component';
 import { ControlPanelComponent } from './layout/control-panel/control-panel.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
