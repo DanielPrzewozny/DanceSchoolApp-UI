@@ -9,34 +9,32 @@ mat-card-title,
         justify-content: center;
       }
 
-
-table{
-        height: 100px;
+.calendar-container {
+  position: relative;
 }
 
-td{
-        height: 40px;
-        width: 150px;
-        border: gray thin solid;
+table {
+  border-collapse: collapse;
+  width: 800px;
 }
 
-.resize{
-        top: 0px;
-        width: 150px;
-        height: 40px;
-        float: left;
-        border: #002DA4 thin solid;
-
-        text-align: center;
-        border-right-color: red;
-        position: absolute;
-        overflow: hidden;
-        z-index: 1;
+td,
+th {
+  border: 1px solid #518b70;
+  text-align: center;
 }
 
-td.drop
-{
-        position: relative;
-        width: 150px;
-        clear:both;
+table td {
+  height: 25px;
+}
+
+.event {
+  position: absolute;
+  cursor: move;
+  box-sizing: border-box;
+  background-color: #3ba389;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -15,163 +15,30 @@
     </mat-action-list>
   </mat-drawer>
   <mat-drawer-content>
-    <!-- <mat-card-content class="mat-elevation-z8" style="display: flex;
-    justify-content: center;
-    align-items: center; margin-top: 3em; margin-bottom: 3em;"><img src='./assets/img/lessons/grafik.jpg' alt="Ballroom dance"></mat-card-content> -->
 
-    <div class="content">
-      <table class="mat-elevation-z8" cellspacing='3'>
+    <div class="calendar-container">
+      <table>
         <tr>
           <th></th>
-          <th>Monday</th>
-          <th>Tuesday</th>
-          <th>Wednesday</th>
-          <th>Thursday</th>
-          <th>Friday</th>
-          <th>Saturday</th>
-          <th>Sunday</th>
+          <th class="cell-place" *ngFor="let place of places">{{ place }}</th>
         </tr>
-
-        <tbody class='container'>
-          <tr>
-            <th scope="row">09:00 – 10:00</th>
-            <td class='drop'>
-              <div draggable='true' class='resize' style='background-color:blue'>Session A</div>
-            </td>
-            <td draggable='true' class='drop'>
-              <div draggable='true' class='resize' style='background-color:red'>Session B</div>
-            </td>
-            <td draggable='true' class='drop'><div draggable='true' class='resize'>Session C</div></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-          </tr>
-
-          <tr>
-            <th scope="row">10:00 – 11:00</th>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-          </tr>
-          <tr>
-            <th scope="row">11:00 – 12:00</th>
-            <td class='drop'></td>
-            <td class='drop'></td>
-            <td class='drop'></td>
-            <td class='drop'></td>
-            <td class='drop'></td>
-            <td class='drop'></td>
-            <td class='drop'><div draggable='true' class='resize'>Session D</div></td>
-          </tr>
-          <tr>
-            <th scope="row">12:00 – 13:00</th>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-          </tr>
-          <tr>
-            <th scope="row">13:00 – 14:00</th>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-          </tr>
-          <tr>
-            <th scope="row">14:00 – 15:00</th>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-          </tr>
-          <tr>
-            <th scope="row">15:00 – 16:00</th>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-          </tr>
-          <tr>
-            <th scope="row">16:00 – 17:00</th>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-          </tr>
-          <tr>
-            <th scope="row">17:00 – 18:00</th>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-          </tr>
-          <tr>
-            <th scope="row">18:00 – 19:00</th>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-          </tr>
-          <tr>
-            <th scope="row">19:00 – 20:00</th>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-          </tr>
-          <tr>
-            <th scope="row">20:00 – 21:00</th>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'><div draggable='true' class='resize' style='background-color:yellow'>Session F</div></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'><div draggable='true' class='resize' style='background-color:yellow'>Session G</div></td>
-            <td draggable='true' class='drop'></td>
-          </tr>
-          <tr>
-            <th scope="row">21:00 – 22:00</th>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-            <td draggable='true' class='drop'></td>
-          </tr>
-        </tbody>
+        <tr *ngFor="let hour of hours">
+          <td class="cell-hour">{{ hour }}</td>
+          <td *ngFor="let place of places" (dblclick)="modalService.open('modal-1')"></td>
+        </tr>
       </table>
+      <div *ngFor="let event of events" >
+        <div class="event" [ngStyle]="event.position" cdkDrag (cdkDragEnded)="dragEnded(event, $event)">
+          <div>{{ event.location }} <br> {{ event.startTime }} <br>-<br> {{ event.endTime }}</div>
+        </div>
+      </div>
     </div>
 
+    <jw-modal id="modal-1">
+      <h1>A custom modal popup</h1>
+      <p>Home page text: <input type="text" [(ngModel)]="bodyText" /></p>
+      <button (click)="createEvent('8:00 AM', '12:00 PM', 'Monday');modalService.close();">Close</button>
+  </jw-modal>
 
 <router-outlet></router-outlet>
   </mat-drawer-content>

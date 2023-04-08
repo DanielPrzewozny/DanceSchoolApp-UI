@@ -57,6 +57,8 @@ import { ViewClubCardsComponent } from './club-cards/view-club-cards/view-club-c
 import { ViewTeachersComponent } from './teachers/view-teachers/view-teachers/view-teachers.component';
 import { MainInfoComponent } from './layout/main-info/main-info.component';
 import { ControlPanelComponent } from './layout/control-panel/control-panel.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ModalComponent } from './components/modal.component';
 
 
 @NgModule({
@@ -71,11 +73,13 @@ import { ControlPanelComponent } from './layout/control-panel/control-panel.comp
     ViewClubCardsComponent,
     ViewTeachersComponent,
     MainInfoComponent,
-    ControlPanelComponent
+    ControlPanelComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    DragDropModule,
     BrowserAnimationsModule,
     MatAutocompleteModule,
     MatCheckboxModule,

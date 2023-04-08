@@ -1,17 +1,17 @@
 $(function() {
 
-  var grid = [];
+var grid = [];
 var gridSize = 20;
 var gridSizePx = 150;
 
 function defineMoveableObjects() {
   //Assign these items as selectable
-  var selectableItems = $(document.getElementsByClassName('resize'));
-  makeResizable(selectableItems);
+  //var selectableItems = $(document.getElementsByClassName('resize'));
+  makeResizable();
 }
 
-function makeResizable(bookedItems) {
-  bookedItems.resizable({
+function makeResizable() {
+  $(".resize").resizable({
     grid: [gridSizePx,40],
     handles: "e,ne,n,s,se",
     containment: ".container",
@@ -22,7 +22,7 @@ function makeResizable(bookedItems) {
     }
   });
   //Make them draggable
-  bookedItems.draggable({
+  $(".resize").draggable({
     grid: [gridSizePx,40],
     opacity:.7,
     zIndex:1000,
